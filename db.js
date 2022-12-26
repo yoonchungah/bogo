@@ -1,11 +1,24 @@
+// var mysql = require('mysql');
+// const {
+//   connect
+// } = require('./app');
+// var connection = mysql.createConnection({
+//   host: '127.0.0.1',
+//   user: 'root',
+//   password: '1234',
+//   database: 'team_bogo',
+//   dateStrings: 'date',
+//   multipleStatements: true
+// });
+
 var mysql = require('mysql');
-const {
-  connect
-} = require('./app');
+// const {
+//   connect
+// } = require('./app');
 var connection = mysql.createConnection({
-  host: '127.0.0.1',
+  host: 'database-2.cedxt1puu3qa.ap-northeast-2.rds.amazonaws.com',
   user: 'root',
-  password: '1234',
+  password: 'victory7',
   database: 'team_bogo',
   dateStrings: 'date',
   multipleStatements: true
