@@ -149,7 +149,7 @@ router.get('/notice-detailMN', (req, res) => {
   console.log(id);
   db.getnxtnotice(id, (row) => {
     if (row.length == '0') {
-      res.send(<script>alert('다음글이 존재하지 않습니다.');document.location="/notice-main";</script>)
+      res.send(`<script>alert('다음글이 존재하지 않습니다.');document.location="/notice-main";</script>`)
     } else {
       db.getnoticeById(row[0].id, (rows) => {
         res.render('notice-detailM', {
@@ -161,6 +161,9 @@ router.get('/notice-detailMN', (req, res) => {
     // console.log(row[0]);
   })
 })
+
+
+
 
 //1212청아 서브페이지 연결
 //오시는 길 연결 
@@ -299,7 +302,7 @@ router.post("/rev_login", (req, res) => {
   db.logincheck(ids, pws, (results) => {
     if (results.length > 0) {
       res.send(
-        `<script>alert("${ids}님 환영합니다!"); document.location.href="/rev_check"</script>`
+        `<script>alert("${ids}님 환영합니다!"); document.location.href="/rev_check"</scripalert>`
       );
     } else {
       res.send(
