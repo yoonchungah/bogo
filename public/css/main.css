@@ -260,13 +260,19 @@ img.m-main1 {
 .silde_arrow>ul{
   display: flex;
   justify-content: flex-end;
+
+  /* 1228 */
+  width: 100%;
 }
 .silde_arrow li{
   font-size: 18px;
   font-weight: 700;
 }
 .exhibition_pagination{
-  width: 34px;
+  /* width: 34px; */
+  /* 1228 */
+  width: 100%;
+  /* 1228 */
   position: relative;
   bottom: 0;
   font-size: 0 !important;
