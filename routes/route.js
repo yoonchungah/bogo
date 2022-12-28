@@ -302,7 +302,7 @@ router.post("/rev_login", (req, res) => {
   db.logincheck(ids, pws, (results) => {
     if (results.length > 0) {
       res.send(
-        `<script>alert("${ids}님 환영합니다!"); document.location.href="/rev_check"</scripalert>`
+         `<script>alert("${ids}님 환영합니다!"); document.location.href="/rev_check"</script>`
       );
     } else {
       res.send(
