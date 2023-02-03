@@ -1,6 +1,7 @@
 //header에 포지션 주기
 
 let header = document.querySelector('#header');
+let footer = document.querySelector('#footer');
 
 window.addEventListener('wheel', () => {
   header.style.position = 'sticky';
@@ -11,6 +12,34 @@ window.addEventListener('wheel', () => {
 })
 
 
+//소장품 글 작성 시 헤더 푸터 안보이게
+if(window.location.pathname == '/collection_write'){
+	header.style.display = 'none';
+}
+if(window.location.pathname == '/collection_write'){
+	footer.style.display = 'none';
+}
+if(window.location.pathname == '/updatecollec'){
+	header.style.display = 'none';
+}
+if(window.location.pathname == '/updatecollec'){
+	footer.style.display = 'none';
+}
+
+
+//게시판 글 작성 시 헤더 푸터 안보이게
+if(window.location.pathname == '/notice-write'){
+	header.style.display = 'none';
+}
+if(window.location.pathname == '/notice-write'){
+	footer.style.display = 'none';
+}
+if(window.location.pathname == '/notice-writememo-e'){
+	header.style.display = 'none';
+}
+if(window.location.pathname == '/notice-writememo-e'){
+	footer.style.display = 'none';
+}
 
 
 

@@ -1,33 +1,28 @@
-var mysql = require('mysql');
-const {
-  connect
-} = require('./app');
-var connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '1234',
-  database: 'team_bogo',
-  dateStrings: 'date',
-  multipleStatements: true
-});
-
 // var mysql = require('mysql');
-// // const {
-// //   connect
-// // } = require('./app');
+// const {
+//   connect
+// } = require('./app');
 // var connection = mysql.createConnection({
-//   host: 'database-2.cedxt1puu3qa.ap-northeast-2.rds.amazonaws.com',
+//   host: '127.0.0.1',
 //   user: 'root',
-//   password: 'victory7',
+//   password: '1234',
 //   database: 'team_bogo',
 //   dateStrings: 'date',
 //   multipleStatements: true
 // });
 
-// 1221 석진 데이터베이스 추가
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+  host: 'database-1.cbt0ajlvu182.ap-northeast-2.rds.amazonaws.com',
+  user: 'root',
+  password: '12345eri',
+  database: 'team_bogo',
+  dateStrings: 'date',
+  // multipleStatements: true
+});
+
 
 //공지사항 메인
-
 // 알립니다 공지사항 작성 
 function insertNoticeWrite(noticefile, noticetitle, noticecont, callback) {
   connection.query(`insert into notice(DATE, noticefile, noticetitle, noticecont)
@@ -104,7 +99,7 @@ function getnxtnotice(id, callback) {
 
 
 
-//1226 청아 추가
+
 // collection 추출
 function getcollection(callback){
   connection.query(`SELECT * FROM bogo_collection ORDER BY id`,(err,rows)=>{
@@ -154,7 +149,7 @@ function updateprowrite(img,id,name,writer,year,cont,callback){
 
 
 
-//1226 유석 추가
+
 //로그인연결//데이터
 function logincheck(ids, pws, callback) {
   connection.query(
@@ -190,14 +185,14 @@ module.exports = {
   updateNoticeWrite,
   deleteBynotice,
 
-  //청아 추가
+
   getcollection,
   insertcollection,
   getcollectionByid,
   deleteByidcollec,
   updateprowrite,
 
-  //유석 추가
+
   logincheck,
   Joins
 }

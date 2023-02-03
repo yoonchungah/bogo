@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
   res.render("main");
 });
 
-//1212석진 서브페이지 연결
+
 //공지사항메인
 router.get('/notice-main', (req, res) => {
   db.getnoticemain((rows) => {
@@ -41,14 +41,12 @@ router.get("/artist-chang", (req, res) => {
 });
 
 
-//1221 석진 데이터베이스 연결
+
 
 //파일 업로드 관련
-
 const upload = multer({
   storage: multer.diskStorage({
     destination(req, file, done) {
-      // done(null, 'public/upload/');
       done(null, '../public/upload/');
     },
     filename(req, file, done) {
@@ -86,8 +84,6 @@ router.get('/notice-writememo-e', (req, res) => {
 })
 
 
-
-
 //수정시 넘어가는 데이터
 router.post('/notice-writememo-edit', upload.single('noticefile'), (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
@@ -120,7 +116,6 @@ router.get('/notice-detailM', (req, res) => {
         row: row[0]
 
       })
-      // console.log(row[0]);
     })
   })
 })
@@ -135,13 +130,11 @@ router.get('/notice-detailMP', (req, res) => {
         res.render('notice-detailM', {
           row: rows[0]
         })
-        // console.log(row[0]);
       })
     })
   } else {
     res.send(`<script>alert('이전글이 존재하지 않습니다.');document.location="/notice-main";</script>`)
   }
-  // console.log(row[0]);
 })
 //다음글 누를시 내용이 보이는거
 router.get('/notice-detailMN', (req, res) => {
@@ -155,17 +148,15 @@ router.get('/notice-detailMN', (req, res) => {
         res.render('notice-detailM', {
           row: rows[0]
         })
-        // console.log(row[0]);
       })
     }
-    // console.log(row[0]);
   })
 })
 
 
 
 
-//1212청아 서브페이지 연결
+
 //오시는 길 연결 
 router.get("/map", (req, res) => {
   res.render("map");
@@ -257,16 +248,6 @@ router.post('/up_collection_w', upload.single('up_collection_img'), (req, res) =
 
 
 
-
-
-
-
-
-
-
-
-
-//12 16유석 서브페이지연결
 //예약메인
 router.get("/rev_main", (req, res) => {
   res.render("rev_main");
