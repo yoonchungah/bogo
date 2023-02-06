@@ -14,7 +14,6 @@ var swiper = new Swiper(".mySwiperd", {
   },
   slidesPerView: 4,
   loop: true,
-  centeredSlides: true,
   spaceBetween: 100,
   freeMode: true,
   pagination: {

@@ -1,16 +1,3 @@
-// var mysql = require('mysql');
-// const {
-//   connect
-// } = require('./app');
-// var connection = mysql.createConnection({
-//   host: '127.0.0.1',
-//   user: 'root',
-//   password: '1234',
-//   database: 'team_bogo',
-//   dateStrings: 'date',
-//   multipleStatements: true
-// });
-
 var mysql = require('mysql');
 var connection = mysql.createConnection({
   host: 'database-1.cbt0ajlvu182.ap-northeast-2.rds.amazonaws.com',
@@ -18,7 +5,6 @@ var connection = mysql.createConnection({
   password: '12345eri',
   database: 'team_bogo',
   dateStrings: 'date',
-  // multipleStatements: true
 });
 
 
